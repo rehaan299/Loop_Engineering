@@ -1,0 +1,14 @@
+{
+  "name": "loop-engineering",
+  "displayName": "Loop Engineering",
+  "version": "4.0.0",
+  "description": "Persistent, tiered project memory for coding agents: read the codebase once, boot every session from one small file, pull the rest by ID.",
+  "author": {
+    "name": "Rehaan Sharma",
+    "url": "https://rehaansharma.vercel.app/"
+  },
+  "homepage": "https://github.com/rehaan299/Loop_Engineering",
+  "repository": "https://github.com/rehaan299/Loop_Engineering",
+  "license": "MIT",
+  "keywords": ["context-engineering", "memory", "agents", "session", "handoff", "agents-md", "agent-skills"]
+}

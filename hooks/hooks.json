@@ -1,0 +1,18 @@
+{
+  "description": "Loop Engineering: load docs/loop/BOOT.md into context at startup, after /clear, and after compaction",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/skills/loop-engineering/scripts/loop.py", "hook", "session-start"],
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

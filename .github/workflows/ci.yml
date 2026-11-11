@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, python: "3.10" }
+          - { os: ubuntu-latest, python: "3.13" }
+          - { os: macos-latest, python: "3.9" }
+          - { os: macos-latest, python: "3.13" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Protocol copies are in sync
+        run: diff -u skills/loop-engineering/PROTOCOL.md LOOP_ENGINEERING.md
+      - name: Manifests are valid JSON
+        run: |
+          python -m json.tool .claude-plugin/plugin.json > /dev/null
+          python -m json.tool .claude-plugin/marketplace.json > /dev/null
+          python -m json.tool hooks/hooks.json > /dev/null
+      - name: Installer smoke test
+        run: |
+          mkdir -p "$RUNNER_TEMP/proj" && cd "$RUNNER_TEMP/proj" && git init -q
+          LOOP_HOME="$RUNNER_TEMP/lh" LOOP_BIN="$RUNNER_TEMP/lb" bash "$GITHUB_WORKSPACE/install.sh" --local
+          "$RUNNER_TEMP/lb/loop" check
+          test -f docs/loop/BOOT.md && test -f AGENTS.md

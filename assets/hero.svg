@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-labelledby="t d">
+  <title id="t">Loop Engineering v4</title>
+  <desc id="d">Read the codebase once, boot every session from one small file, pull the rest by ID.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="0.55" stop-color="#11113a"/>
+      <stop offset="1" stop-color="#1d0f3d"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#e879f9"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e0f2fe"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#818cf8" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <path id="orbit" d="M 290 210 m -120 0 a 120 120 0 1 1 240 0 a 120 120 0 1 1 -240 0"/>
+  </defs>
+
+  <rect width="1280" height="420" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="24" fill="url(#grid)"/>
+  <circle cx="290" cy="210" r="190" fill="url(#glow)">
+    <animate attributeName="r" values="175;195;175" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- the loop -->
+  <g fill="none" stroke-linecap="round">
+    <circle cx="290" cy="210" r="120" stroke="#ffffff" stroke-opacity="0.08" stroke-width="22"/>
+    <circle cx="290" cy="210" r="120" stroke="url(#ring)" stroke-width="6" stroke-dasharray="230 21.3" transform="rotate(-90 290 210)">
+      <animateTransform attributeName="transform" type="rotate" from="-90 290 210" to="270 290 210" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- orbiting token -->
+  <circle r="11" fill="#e879f9" filter="url(#soft)" opacity="0.9">
+    <animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#orbit"/></animateMotion>
+  </circle>
+  <circle r="6" fill="#ffffff">
+    <animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#orbit"/></animateMotion>
+  </circle>
+
+  <!-- stage labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#cbd5e1" text-anchor="middle" letter-spacing="1.5">
+    <text x="290" y="72">READ ONCE</text>
+    <text x="458" y="300">BOOT SMALL</text>
+    <text x="122" y="300">PULL BY ID</text>
+  </g>
+
+  <!-- core -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle">
+    <rect x="232" y="182" width="116" height="56" rx="12" fill="#0b1024" stroke="#818cf8" stroke-opacity="0.6"/>
+    <text x="290" y="207" font-size="15" fill="#f8fafc" font-weight="700">BOOT.md</text>
+    <text x="290" y="226" font-size="11" fill="#94a3b8">≤ 8,000 chars</text>
+  </g>
+
+  <!-- text -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif">
+    <text x="600" y="150" font-size="64" font-weight="800" fill="url(#title)" letter-spacing="-1.5">Loop Engineering</text>
+    <text x="602" y="198" font-size="24" fill="#cbd5e1">Persistent, tiered context for AI coding agents.</text>
+    <text x="602" y="232" font-size="18" fill="#94a3b8">Read the codebase once. Boot every session from one small file.</text>
+    <text x="602" y="258" font-size="18" fill="#94a3b8">Pull everything else by ID, only when the task needs it.</text>
+  </g>
+
+  <!-- chips -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
+    <rect x="602" y="292" width="72" height="30" rx="15" fill="#818cf8" fill-opacity="0.18" stroke="#818cf8" stroke-opacity="0.6"/>
+    <text x="638" y="312" fill="#e0e7ff" text-anchor="middle">v4.0</text>
+    <rect x="686" y="292" width="208" height="30" rx="15" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-opacity="0.55"/>
+    <text x="790" y="312" fill="#e0f2fe" text-anchor="middle">boot ≤ 2k tokens</text>
+    <rect x="906" y="292" width="150" height="30" rx="15" fill="#e879f9" fill-opacity="0.14" stroke="#e879f9" stroke-opacity="0.55"/>
+    <text x="981" y="312" fill="#fae8ff" text-anchor="middle">zero dependencies</text>
+    <text x="602" y="356" fill="#64748b">Claude Code · Codex · Cursor · Copilot · Gemini CLI · any agent that reads Markdown</text>
+  </g>
+</svg>

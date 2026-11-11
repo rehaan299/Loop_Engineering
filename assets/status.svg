@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 860 560" width="860" height="560" role="img" aria-label="loop status dashboard in a terminal">
+  <defs>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f1426"/>
+      <stop offset="1" stop-color="#0a0e1c"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+    <style>
+      .m { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
+      .dim { fill: #64748b; } .txt { fill: #e2e8f0; } .cy { fill: #38bdf8; } .gr { fill: #4ade80; }
+      .ye { fill: #facc15; } .rd { fill: #f87171; } .b { font-weight: 700; } .pu { fill: #c4b5fd; }
+      .cursor { animation: blink 1.1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+    </style>
+  </defs>
+  <rect width="860" height="560" rx="14" fill="url(#win)" stroke="#1e293b"/>
+  <rect width="860" height="38" rx="14" fill="#141a30"/>
+  <rect y="24" width="860" height="14" fill="#141a30"/>
+  <circle cx="22" cy="19" r="6" fill="#f87171"/><circle cx="42" cy="19" r="6" fill="#facc15"/><circle cx="62" cy="19" r="6" fill="#4ade80"/>
+  <text x="430" y="24" class="m dim" text-anchor="middle">acme-api: zsh</text>
+
+  <g class="m">
+    <text x="24" y="70"><tspan class="gr">➜</tspan><tspan class="cy"> acme-api</tspan><tspan class="txt"> loop status</tspan></text>
+
+    <text x="24" y="106" class="pu">  ╭─────────────────────────────────────────────╮</text>
+    <text x="24" y="124" class="pu">  │   <tspan class="txt b">⟳  L O O P   E N G I N E E R I N G   v4</tspan>   │</text>
+    <text x="24" y="142" class="pu">  ╰─────────────────────────────────────────────╯</text>
+
+    <text x="24" y="178"><tspan class="cy">  ◆ </tspan><tspan class="txt b">acme-api</tspan></text>
+    <text x="24" y="198"><tspan class="dim">      session     </tspan><tspan class="txt b">12</tspan></text>
+    <text x="24" y="216"><tspan class="dim">      last close  </tspan><tspan class="txt">2026-11-10T18:42:07-07:00</tspan></text>
+    <text x="24" y="234"><tspan class="dim">      agent       </tspan><tspan class="txt">claude-opus-5-5</tspan></text>
+    <text x="24" y="252"><tspan class="dim">      drift       </tspan><tspan class="ye">2 commit(s) since 9f3c2ab</tspan></text>
+
+    <text x="24" y="288"><tspan class="cy">  ◆ </tspan><tspan class="txt b">context budget</tspan></text>
+    <text x="24" y="308"><tspan class="dim">      BOOT.md  </tspan></text>
+  </g>
+  <rect x="150" y="296" width="216" height="15" rx="2" fill="#1e293b"/>
+  <rect x="150" y="296" width="128" height="15" rx="2" fill="url(#fill)">
+    <animate attributeName="width" values="0;128" dur="1.4s" fill="freeze"/>
+  </rect>
+  <g class="m">
+    <text x="380" y="308"><tspan class="txt">4,712 / 8,000 chars</tspan><tspan class="dim">  ≈ 1178 tokens</tspan></text>
+
+    <text x="24" y="344"><tspan class="cy">  ◆ </tspan><tspan class="txt b">tiers</tspan></text>
+    <text x="24" y="364"><tspan class="dim">      BOOT.md           </tspan><tspan class="rd">HOT </tspan><tspan class="txt">    4,712 chars</tspan><tspan class="dim">  loaded every session</tspan></text>
+    <text x="24" y="382"><tspan class="dim">      progress.md       </tspan><tspan class="ye">WARM</tspan><tspan class="txt">   31,904 chars</tspan><tspan class="dim">  read by section</tspan></text>
+    <text x="24" y="400"><tspan class="dim">      codebase-map.md   </tspan><tspan class="ye">WARM</tspan><tspan class="txt">   22,315 chars</tspan><tspan class="dim">  read by section</tspan></text>
+    <text x="24" y="418"><tspan class="dim">      decisions.md      </tspan><tspan class="cy">COLD</tspan><tspan class="txt">   18,077 chars</tspan><tspan class="dim">  pulled by D-###</tspan></text>
+    <text x="24" y="436"><tspan class="dim">      traps.md          </tspan><tspan class="cy">COLD</tspan><tspan class="txt">    6,420 chars</tspan><tspan class="dim">  pulled by TRAP-###</tspan></text>
+
+    <text x="24" y="472"><tspan class="cy">  ◆ </tspan><tspan class="txt b">next</tspan></text>
+    <text x="24" y="492"><tspan class="dim">      START HERE   </tspan><tspan class="txt">T-041: Add idempotency keys to POST /payments</tspan></text>
+    <text x="24" y="510"><tspan class="dim">      IDs indexed  </tspan><tspan class="txt">87</tspan></text>
+
+    <text x="24" y="542"><tspan class="cy">  ◆ </tspan><tspan class="txt b">health  </tspan><tspan class="gr">✔ healthy</tspan><tspan class="dim">  (loop check for details)</tspan><tspan class="txt cursor">  ▍</tspan></text>
+  </g>
+</svg>

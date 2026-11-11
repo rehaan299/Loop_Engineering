@@ -1,0 +1,15 @@
+{
+  "name": "loop-engineering",
+  "description": "Loop Engineering: persistent, tiered context for AI coding agents",
+  "owner": {
+    "name": "Rehaan Sharma",
+    "url": "https://github.com/rehaan299"
+  },
+  "plugins": [
+    {
+      "name": "loop-engineering",
+      "source": "./",
+      "description": "Read the codebase once, boot every session from one small file, pull the rest by ID. Adds /loop-engineering commands and a SessionStart hook that reloads BOOT.md after startup, /clear, and compaction."
+    }
+  ]
+}
